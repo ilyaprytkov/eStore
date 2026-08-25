@@ -13,4 +13,28 @@
     @apply fixed bottom-0 w-60 my-4 m-2 rounded-2xl border-t-2 
       border-gray-300 hover:bg-blue-100 hover:border-blue-200;
   }
-}
+
+  .custom-primary-btn {
+    @apply p-3 m-1 rounded-md bg-blue-500 text-gray-50 hover:bg-blue-200 hover:text-blue-900 hover:shadow-md;
+  }
+
+  .custom-table {
+    @apply overflow-y-auto w-10/12 mx-auto;
+  }
+
+  .custom-table th {
+    @apply p-3;
+  }
+  .custom-input {
+    @apply h-12 w-full border border-gray-300 text-black rounded-md p-3 text-base 
+        placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-[2px]
+        focus-visible:ring-blue-400 disabled:cursor-not-allowed disabled:opacity-10
+        group-hover/input:shadow-none;
+  }
+
+  .custom-submit-btn {
+    @apply rounded font-medium text-white text-base lg:text-lg leading-5 lg:leading-6
+        bg-blue-700 hover:shadow-xl disabled:pointer-events-none disabled:bg-gray-500
+        disabled:text-black/50 px-5 py-3;
+  }
+} 
