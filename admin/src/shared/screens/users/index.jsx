@@ -1,6 +1,11 @@
+import { getUsers } from "@/actions/userActions";
+import { DeleteIcon, EditIcon } from "@/components/icons";
+import { Button } from "@/shared/ui/button";
 import Link from "next/link";
 
-export default function UserScreen() {
+export default async function UserScreen() {
+    const users = await getUsers();
+
     return (
         <div>
             <div className="flex justify-between">
@@ -25,6 +30,27 @@ export default function UserScreen() {
                             <th>Action</th>
                         </tr>
                     </thead>
+                    <tbody className="text-gray-700 font-medium text-lg text-center items-center">
+                        {
+                            users.map((user, key)=> (
+                                <tr key={key} className="items-center">
+                                    <td>{key+1}</td>
+                                    <td>{user.userName}</td>
+                                    <td className="flex gap-x-3">
+                                        <Link 
+                                            href={`/users/edit/${user.id}`}
+                                            className="w-fit"
+                                        >
+                                            <EditIcon/>
+                                        </Link>
+                                        <Button className="bg-transparent p-0 px-2 border-none text-red-500 shadow-none">
+                                            <DeleteIcon/>
+                                        </Button>
+                                    </td>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
                 </table>
             </div>
         </div>
