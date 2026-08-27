@@ -43,6 +43,5 @@ next-env.d.ts
 # prisma
 .agents
 .claude
-.cursor
-.devin
 /src/generated/prisma
+/generated/prisma
