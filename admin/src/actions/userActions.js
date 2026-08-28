@@ -68,3 +68,43 @@ export const getUsers = async () => {
 
     return users;
 }
+
+export const getUniqueUser = async (userId) => {
+    const user = await prisma.adminUser.findUnique({
+        where:{
+            id:userId
+        }
+    });
+
+    return user;
+}
+
+export const updateUser = async(userId, formData) => {
+    const data = {
+        userName: formData.get("userName"),
+        userType: formData.get("userType"),
+        password: formData.get("password"),
+        confirmPassword: formData.get("confirmPassword")
+    };
+
+    
+    let hashedPassword;
+    if (data.password) {
+        const salt = bcrypt.genSaltSync(10);
+        hashedPassword = await bcrypt.hash(data.password, salt);
+    }
+
+    await prisma.adminUser.update({
+        where:{
+            id : parseInt(userId),
+        },
+        data : {
+            userName : data.userName,
+            userType : data.userType,
+            ...(data.password && {hashedPassword})
+        }
+    })
+
+    revalidatePath("/users", "page");
+    redirect("/users");
+}
