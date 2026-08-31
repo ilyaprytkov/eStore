@@ -88,11 +88,18 @@ export const updateUser = async(userId, formData) => {
     };
 
     
-    let hashedPassword;
-    if (data.password) {
-        const salt = bcrypt.genSaltSync(10);
-        hashedPassword = await bcrypt.hash(data.password, salt);
+    if (data.password !== data.confirmPassword) {
+        return redirect(`/users/edit/${userId}?errorMessage=${encodeURIComponent("Passwords do not match")}`);
     }
+
+    let hashedPassword;
+    if (data.password && data.password.trim() !== "") {
+        hashedPassword = await bcrypt.hash(data.password, 10);
+    }
+
+    if (hashedPassword) {
+        data.password = hashedPassword; 
+    } 
 
     await prisma.adminUser.update({
         where:{
@@ -101,10 +108,20 @@ export const updateUser = async(userId, formData) => {
         data : {
             userName : data.userName,
             userType : data.userType,
-            ...(data.password && {hashedPassword})
-        }
-    })
+            password : data.password,
+        },
+    });
 
     revalidatePath("/users", "page");
     redirect("/users");
+}
+
+export async function deleteUser(userId) {
+    await prisma.adminUser.delete({
+        where: {
+            id : userId
+        }
+    });
+
+    revalidatePath("/users", "page");
 }

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { HomeIcon, ShoppingBagIcon, SwatchIcon, UserIcon } from "../icons";
+import { HomeIcon, ShoppingBagIcon, SwatchIcon, UserIcon } from "../../shared/ui/icons";
 
 export default function Sidebar() {
     return (

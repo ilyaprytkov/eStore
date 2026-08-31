@@ -1,10 +1,16 @@
-import { getUsers } from "@/actions/userActions";
-import { DeleteIcon, EditIcon } from "@/components/icons";
+"use client"
+
+import { deleteUser } from "@/actions/userActions";
+import { DeleteIcon, EditIcon } from "@/shared/ui/icons";
+import DeleteConformationModal from "@/components/ui/ConformationModal";
 import { Button } from "@/shared/ui/button";
 import Link from "next/link";
 
-export default async function UserScreen() {
-    const users = await getUsers();
+export default function UserScreen({users}) {
+
+    const handleDelete = async (selectedId) => {
+        await deleteUser(selectedId);
+    }
 
     return (
         <div>
@@ -43,7 +49,10 @@ export default async function UserScreen() {
                                         >
                                             <EditIcon/>
                                         </Link>
-                                        <Button className="bg-transparent p-0 px-2 border-none text-red-500 shadow-none">
+                                        <Button 
+                                            className="bg-transparent p-0 px-2 border-none text-red-500 shadow-none"
+                                            onClick={()=>handleDelete(user.id)}
+                                        >
                                             <DeleteIcon/>
                                         </Button>
                                     </td>
@@ -52,6 +61,8 @@ export default async function UserScreen() {
                         }
                     </tbody>
                 </table>
+
+                <DeleteConformationModal/>
             </div>
         </div>
     )

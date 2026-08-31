@@ -1,12 +1,17 @@
 import { getUniqueUser, updateUser } from "@/actions/userActions";
+import { View } from "@/features/view";
 import { Button } from "@/shared/ui/button";
 import { Input } from "@/shared/ui/input";
 import Label from "@/shared/ui/label";
+import { use } from "react";
 
-const EditUser = async ({params}) => {
+const EditUser = async ({params, searchParams}) => {
     const {userId} = await params;
     const id = parseInt(userId)
     const userData = await getUniqueUser(id);
+
+    const searchErrorParams = await searchParams;
+    const errorMessage = searchErrorParams?.errorMessage;
 
     const updateUserWithId = updateUser.bind(null, id)
 
@@ -18,11 +23,11 @@ const EditUser = async ({params}) => {
                 action={updateUserWithId}
             >
                 {
-                    // <View.Condition if={errorMessage}>
-                    //     <div className="col-span-2 border-red-500 rounded-xl px-5 py-3 bg-red-50 w-fit">
-                    //         <span className="text-red-500 col-span-2 text-md my-0 font-500">{errorMessage }</span>
-                    //     </div>
-                    // </View.Condition>
+                    <View.Condition if={errorMessage}>
+                        <div className="col-span-2 border-red-500 rounded-xl px-5 py-3 bg-red-50 w-fit">
+                            <span className="text-red-500 col-span-2 text-md my-0 font-500">{errorMessage }</span>
+                        </div>
+                    </View.Condition>
                 }
                 <div className="grid gap-2">
                     <Label required={true}>Username</Label>
