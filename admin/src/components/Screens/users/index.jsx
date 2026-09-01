@@ -5,11 +5,18 @@ import { DeleteIcon, EditIcon } from "@/shared/ui/icons";
 import DeleteConformationModal from "@/components/ui/ConformationModal";
 import { Button } from "@/shared/ui/button";
 import Link from "next/link";
+import { useState } from "react";
+import { View } from "@/features/view";
 
 export default function UserScreen({users}) {
 
-    const handleDelete = async (selectedId) => {
+    const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false); 
+    const [selectedId, setSelectedId] = useState();
+
+    const handleDelete = async () => {
         await deleteUser(selectedId);
+        setIsDeleteModalOpen(false);
+        setSelectedId(null);
     }
 
     return (
@@ -51,7 +58,10 @@ export default function UserScreen({users}) {
                                         </Link>
                                         <Button 
                                             className="bg-transparent p-0 px-2 border-none text-red-500 shadow-none"
-                                            onClick={()=>handleDelete(user.id)}
+                                            onClick={()=>{
+                                                setIsDeleteModalOpen(true);
+                                                setSelectedId(user.id);
+                                            }}
                                         >
                                             <DeleteIcon/>
                                         </Button>
@@ -61,8 +71,13 @@ export default function UserScreen({users}) {
                         }
                     </tbody>
                 </table>
-
-                <DeleteConformationModal/>
+                <View.Condition if={isDeleteModalOpen}>
+                    <DeleteConformationModal 
+                        setIsOpen={setIsDeleteModalOpen}
+                        onCancel={()=>setIsDeleteModalOpen(false)}
+                        handleConfirm={handleDelete}
+                    />
+                </View.Condition>
             </div>
         </div>
     )
