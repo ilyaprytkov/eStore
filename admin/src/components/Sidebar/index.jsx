@@ -12,7 +12,7 @@ export default function Sidebar() {
                 {
                     [{name: "Dashbboard", path: "/", icon: <HomeIcon/>}, 
                     {name: "Users", path: "/users", icon: <UserIcon/>}, 
-                    {name: "Product Type", path: "/product-types", icon: <SwatchIcon/>}, 
+                    {name: "Product Type", path: "/product-type", icon: <SwatchIcon/>}, 
                     {name: "Products", path: "/products", icon: <ShoppingBagIcon/>}].map((item, key) => {
                         return (
                             <li key={key}>
