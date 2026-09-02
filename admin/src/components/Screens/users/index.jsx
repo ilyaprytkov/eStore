@@ -46,7 +46,7 @@ export default function UserScreen({users}) {
                     <tbody className="text-gray-700 font-medium text-lg text-center items-center">
                         {
                             users.map((user, key)=> (
-                                <tr key={key} className="items-center">
+                                <tr key={user.id} className="items-center">
                                     <td>{key+1}</td>
                                     <td>{user.userName}</td>
                                     <td className="flex gap-x-3">
