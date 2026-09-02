@@ -8,14 +8,9 @@ import Link from "next/link";
 import { useState } from "react";
 
 
-const ProductTypes = () => {
+const ProductTypes = ({productTypes}) => {
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
     const [selectedId, setSelectedId] = useState();
-
-    const productTypes = [
-        {id:1, name: "Kids Clothing"},
-        {id:2, name: "Men's Clothing"}
-    ];
 
     const handleDelete = () => {
 

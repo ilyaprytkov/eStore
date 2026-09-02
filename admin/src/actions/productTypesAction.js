@@ -30,3 +30,9 @@ export async function createProductType(formData) {
     revalidatePath("/product-type", "page");
     redirect("/product-type");
 }
+
+export async function getProductTypes() {
+    const productTypes = await prisma.productType.findMany();
+
+    return productTypes;
+}
