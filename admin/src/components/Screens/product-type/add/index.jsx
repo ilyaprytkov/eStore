@@ -1,3 +1,6 @@
+"use client"
+
+import { createProductType } from "@/actions/productTypesAction";
 import { View } from "@/features/view";
 import { Button } from "@/shared/ui/button";
 import { Input } from "@/shared/ui/input";
@@ -10,11 +13,12 @@ const AddProdcutTypes = ({searchParams}) => {
     const errorMessage = params?.errorMessage;
 
     return (
-          <div>
+        <div>
             <h1 className="text-3xl font-semibold p-2"> Add Product Type </h1>
 
             <form 
                 className="grid gap-x-6 gap-y-10 mt-10 grid-cols-2 px-2"
+                action={createProductType}
             >
                 {
                     <View.Condition if={errorMessage}>
