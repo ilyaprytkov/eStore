@@ -36,3 +36,41 @@ export async function getProductTypes() {
 
     return productTypes;
 }
+
+export async function getUniqueProductType(productTypeId) {
+    const productType = await prisma.productType.findUnique({
+        where: {
+            id: parseInt(productTypeId)
+        }
+    });
+
+    return productType;
+}
+
+export async function updateProductType(formData, productTypeId) {
+    const data = {
+        name: formData.get("name")
+    };
+
+    await prisma.productType.update({
+        where: {
+            id: parseInt(productTypeId)
+        },
+        data: {
+            name: data.name
+        }
+    });
+
+    revalidatePath("/product-type", "page");
+    redirect("/product-type");
+}
+
+export async function deleteProductType(productTypeId) {
+   await prisma.productType.delete({
+        where: {
+            id: productTypeId
+        }
+   });
+
+   revalidatePath("/product-type", "page")
+}

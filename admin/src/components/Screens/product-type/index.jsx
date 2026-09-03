@@ -1,5 +1,6 @@
 "use client";
 
+import { deleteProductType } from "@/actions/productTypesAction";
 import DeleteConformationModal from "@/components/ui/ConformationModal";
 import { View } from "@/features/view";
 import { Button } from "@/shared/ui/button";
@@ -12,8 +13,10 @@ const ProductTypes = ({productTypes}) => {
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
     const [selectedId, setSelectedId] = useState();
 
-    const handleDelete = () => {
-
+    const handleDelete = async () => {
+        await deleteProductType(selectedId);
+        setIsDeleteModalOpen(false);
+        setSelectedId(null);
     } 
 
     return (
