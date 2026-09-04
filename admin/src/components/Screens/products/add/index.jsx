@@ -2,6 +2,7 @@ import { View } from "@/features/view";
 import { Button } from "@/shared/ui/button";
 import { Input } from "@/shared/ui/input";
 import Label from "@/shared/ui/label";
+import Switch from "@/shared/ui/switch";
 import { use } from "react";
 
 const AddProducts = ({searchParams}) => {
@@ -75,7 +76,7 @@ const AddProducts = ({searchParams}) => {
                 </div>
                 <div>
                     <Label required={true}>Product Status</Label>
-                    <input type="checkbox" name="isActive"/>
+                    <Switch name="isActive"/>
                 </div>
                 <div className="grid col-span-2 gap-2">
                     <Label required={true}>Description</Label>
