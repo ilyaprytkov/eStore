@@ -1,4 +1,4 @@
-import EditUser from "@/components/Screens/users/edit";
+import EditUser from "@/components/screens/users/edit";
 
 const EditUserPage = async ({params, searchParams}) => {
     return (

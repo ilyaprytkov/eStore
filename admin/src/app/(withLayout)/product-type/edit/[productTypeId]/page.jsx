@@ -1,5 +1,5 @@
 import { getUniqueProductType } from "@/actions/productTypesAction";
-import EditProductType from "@/components/Screens/product-type/edit";
+import EditProductType from "@/components/screens/product-type/edit";
 
 const EditProductTypePage = async ({params, searchParams}) => {
     const {productTypeId} = await params;

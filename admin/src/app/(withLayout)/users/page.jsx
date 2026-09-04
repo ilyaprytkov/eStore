@@ -1,5 +1,5 @@
 import { getUsers } from "@/actions/userActions";
-import UserScreen from "@/components/Screens/users";
+import UserScreen from "@/components/screens/users";
 import Link from "next/link";
 
 export default async function UsersPage() {

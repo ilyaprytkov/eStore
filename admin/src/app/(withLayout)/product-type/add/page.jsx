@@ -1,4 +1,4 @@
-import AddProdcutTypes from "@/components/Screens/product-type/add"
+import AddProdcutTypes from "@/components/screens/product-type/add"
 
 const AddProductTypePage = ({searchParams}) => {
     return (

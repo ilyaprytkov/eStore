@@ -1,4 +1,4 @@
-import ProductTypes from "@/components/Screens/product-type";
+import ProductTypes from "@/components/screens/product-type";
 import { getProductTypes } from "@/actions/productTypesAction";
 
 const ProductTypeManagement = async () => {
