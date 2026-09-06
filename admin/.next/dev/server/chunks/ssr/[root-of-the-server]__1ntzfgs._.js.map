@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Illia%20Prytkov/Documents/ReactJs/ESTORE/admin/src/app/(withLayout)/page.jsx"],"sourcesContent":["import Image from \"next/image\";\n\nexport default function Home() {\n  return (\n    <h1>This is admin section</h1>\n  );\n}\n"],"names":["Home"],"mappings":";;;;;AAAA;;;AAEe,SAASA;IACtB,qBACE,8OAAC;kBAAG;;;;;;AAER"}},
-    {"offset": {"line": 38, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Illia%20Prytkov/Documents/ReactJs/ESTORE/admin/src/app/favicon.ico.mjs%20(structured%20image%20object)"],"sourcesContent":["import src from \"IMAGE\";\nexport default { src, width: 256, height: 256 }\n"],"names":["src","width","height"],"mappings":";;;;AAAA;;uCACe;IAAEA,KAAAA,0IAAG;IAAEC,OAAO;IAAKC,QAAQ;AAAI"}}]
-}
