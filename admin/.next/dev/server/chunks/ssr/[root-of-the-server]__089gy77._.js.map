@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Illia%20Prytkov/Documents/ReactJs/ESTORE/admin/src/app/(withLayout)/users/page.jsx"],"sourcesContent":["import UserScreen from \"@/shared/screens/users\";\r\nimport Link from \"next/link\";\r\n\r\nexport default function UsersPage() {\r\n    return (\r\n        <>\r\n            <UserScreen/>\r\n        </>\r\n    )\r\n}"],"names":["UsersPage","UserScreen"],"mappings":";;;;;;;;;;AACA;;;;AAEe,SAASA;IACpB,qBACI;kBACI,cAAA,8OAACC;;;;;;;;;;AAGb"}},
-    {"offset": {"line": 48, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Illia%20Prytkov/Documents/ReactJs/ESTORE/admin/src/app/favicon.ico.mjs%20(structured%20image%20object)"],"sourcesContent":["import src from \"IMAGE\";\nexport default { src, width: 256, height: 256 }\n"],"names":["src","width","height"],"mappings":";;;;AAAA;;uCACe;IAAEA,KAAAA,0IAAG;IAAEC,OAAO;IAAKC,QAAQ;AAAI"}}]
-}
