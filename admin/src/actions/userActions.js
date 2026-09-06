@@ -1,6 +1,6 @@
 "use server"; // MUST be at the very top of the file
 
-import { Prisma } from "@/generated/prisma/client";
+import { Prisma } from "../../generated/prisma/client";
 import { prisma } from "@/shared/lib/prisma";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";

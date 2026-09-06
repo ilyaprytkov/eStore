@@ -1,11 +1,13 @@
+import { createProduct } from "@/actions/ProductsAction";
 import { View } from "@/features/view";
 import { Button } from "@/shared/ui/button";
+import CustomFileInput from "@/shared/ui/customFileInput";
 import { Input } from "@/shared/ui/input";
 import Label from "@/shared/ui/label";
 import Switch from "@/shared/ui/switch";
 import { use } from "react";
 
-const AddProducts = ({searchParams}) => {
+const AddProducts = ({searchParams, productTypes}) => {
     const {errorMessage} = use(searchParams);
 
     return (
@@ -14,6 +16,7 @@ const AddProducts = ({searchParams}) => {
 
             <form 
                 className="grid gap-x-6 gap-y-10 mt-10 grid-cols-2 px-2"
+                action={createProduct}
             >
                 {
                     <View.Condition if={errorMessage}>
@@ -29,9 +32,13 @@ const AddProducts = ({searchParams}) => {
                 <div className="grid gap-2">
                     <Label required={true}>Product Type</Label>
                     <select className="custom-input appearance-none bg-white cursor-pointer" name="productType">
-                        <option value="">Select Product Type</option>
-                        <option value="Kid's Clothing">Kid's Clothing</option>
-                        <option value="Men's Clothing">Men's Clothing</option>
+                        {
+                            productTypes?.map((productType) => (
+                                <option value={productType.id} key={productType.id}>
+                                    {productType.name}
+                                </option>
+                            ))
+                        }
                     </select>
                 </div>
                 <div className="grid gap-2">
@@ -42,14 +49,14 @@ const AddProducts = ({searchParams}) => {
                     <Label required={true}>Selling Price</Label>
                     <Input 
                         type="number" 
-                        placeholder="Enter Selling Price" name="sellPrice"
+                        placeholder="Enter Selling Price" 
+                        name="sellPrice"
+                        step="0.01"
                     />
                 </div>
                 <div className="grid gap-2">
                     <Label required={true}>Image</Label>
-                    <Input 
-                        type="file" name="image"
-                    />
+                    <CustomFileInput name="image" required/>
                 </div>
                 <div className="grid gap-2">
                     <Label required={true}>Stock of Small Size</Label>

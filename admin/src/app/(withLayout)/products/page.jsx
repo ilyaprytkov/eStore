@@ -1,8 +1,11 @@
+import { getProducts } from "@/actions/ProductsAction";
 import Products from "@/components/screens/products";
 
-const ProductsManagement = () => {
+const ProductsManagement = async () => {
+    const products = await getProducts();
+
     return (
-        <Products/>
+        <Products products={products}/>
     )
 }
 

@@ -1,0 +1,27 @@
+{
+  "node": {
+    "00228354548597cd34670431a984bc6f44a24e6f41": {
+      "workers": {
+        "app/(withLayout)/products/page": {
+          "moduleId": "[project]/.next-internal/server/app/(withLayout)/products/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/actions/ProductsAction.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "codeHash": null
+        }
+      },
+      "exportedName": "getProducts",
+      "filename": "src/actions/ProductsAction.js"
+    },
+    "4048447011ea35a5f1fd65b327631057261530efb6": {
+      "workers": {
+        "app/(withLayout)/products/page": {
+          "moduleId": "[project]/.next-internal/server/app/(withLayout)/products/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/actions/ProductsAction.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "codeHash": null
+        }
+      },
+      "exportedName": "createProduct",
+      "filename": "src/actions/ProductsAction.js"
+    }
+  },
+  "edge": {}
+}

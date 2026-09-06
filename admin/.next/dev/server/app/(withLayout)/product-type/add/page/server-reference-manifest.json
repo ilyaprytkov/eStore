@@ -1,0 +1,16 @@
+{
+  "node": {
+    "404f7cf4d3c360a2953945efb247064a251d996a76": {
+      "workers": {
+        "app/(withLayout)/product-type/add/page": {
+          "moduleId": "[project]/.next-internal/server/app/(withLayout)/product-type/add/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/actions/productTypesAction.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "codeHash": null
+        }
+      },
+      "exportedName": "createProductType",
+      "filename": "src/actions/productTypesAction.js"
+    }
+  },
+  "edge": {}
+}

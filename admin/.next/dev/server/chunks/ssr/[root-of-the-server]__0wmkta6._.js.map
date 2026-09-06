@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Illia%20Prytkov/Documents/ReactJs/ESTORE/admin/src/app/(withLayout)/product-type/page.jsx"],"sourcesContent":["import ProductTypes from \"@/components/screens/products/add/product-type\";\r\nimport { getProductTypes } from \"@/actions/productTypesAction\";\r\n\r\nconst ProductTypeManagement = async () => {\r\n    const productTypes = await getProductTypes();\r\n\r\n    return (\r\n        <div>\r\n            <ProductTypes productTypes={productTypes}/>\r\n        </div>\r\n    )\r\n}\r\n\r\nexport default ProductTypeManagement;"],"names":["ProductTypeManagement","productTypes","ProductTypes"],"mappings":";;;;;;;;;;AACA;;;;AAEA,MAAMA,wBAAwB;IAC1B,MAAMC,eAAe,MAAM,IAAA,uJAAe;IAE1C,qBACI,8OAAC;kBACG,cAAA,8OAACC;YAAaD,cAAcA;;;;;;;;;;;AAGxC;uCAEeD"}},
+    {"offset": {"line": 52, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Illia%20Prytkov/Documents/ReactJs/ESTORE/admin/src/app/favicon.ico.mjs%20(structured%20image%20object)"],"sourcesContent":["import src from \"IMAGE\";\nexport default { src, width: 256, height: 256 }\n"],"names":["src","width","height"],"mappings":";;;;AAAA;;uCACe;IAAEA,KAAAA,0IAAG;IAAEC,OAAO;IAAKC,QAAQ;AAAI"}}]
+}

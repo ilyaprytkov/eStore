@@ -1,9 +1,15 @@
 import AddProducts from "@/components/screens/products/add"
+import { getProductTypes } from "@/actions/productTypesAction";
 
-const AddProductPage = ({searchParams}) => {
+const AddProductPage = async ({searchParams}) => {
+    const productTypes = await getProductTypes();
+
     return (
         <>
-            <AddProducts searchParams={searchParams}/>
+            <AddProducts 
+                searchParams={searchParams}
+                productTypes={productTypes}
+            />
         </>
     )
 }

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Illia%20Prytkov/Documents/ReactJs/ESTORE/admin/src/app/(withLayout)/products/page.jsx"],"sourcesContent":["const ProductsManagement = () => {\r\n    return (\r\n        <Products/>\r\n    )\r\n}\r\n\r\nexport default ProductsManagement;"],"names":["ProductsManagement","Products"],"mappings":";;;;;;AAAA,MAAMA,qBAAqB;IACvB,qBACI,8OAACC;;;;;AAET;uCAEeD"}},
+    {"offset": {"line": 35, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Illia%20Prytkov/Documents/ReactJs/ESTORE/admin/src/app/favicon.ico.mjs%20(structured%20image%20object)"],"sourcesContent":["import src from \"IMAGE\";\nexport default { src, width: 256, height: 256 }\n"],"names":["src","width","height"],"mappings":";;;;AAAA;;uCACe;IAAEA,KAAAA,0IAAG;IAAEC,OAAO;IAAKC,QAAQ;AAAI"}}]
+}
