@@ -85,3 +85,16 @@ export async function getProducts() {
 
     return products;
 }
+
+export async function getUniqueProduct(productId) {
+    const product = await prisma.product.findUnique({
+        where:{
+            id : parseInt(productId)
+        },
+        include : {
+            productType : true
+        } 
+    })
+
+    return product;
+}

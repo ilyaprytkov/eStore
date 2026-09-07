@@ -54,9 +54,9 @@ const Products = ({products}) => {
                                         <Image
                                             src={"/" + product.image}
                                             alt={product.name}
-                                            width={0}
-                                            height={0}
-                                            sizes="100vw"
+                                            width={80}
+                                            height={80}
+                                            sizes="80vw"
                                             className="w-20 h-20 object-cover"
                                         />
                                         <div className="flex flex-col self-center">
@@ -78,7 +78,7 @@ const Products = ({products}) => {
                                     <td>
                                         <div className="flex self-center gap-x-3">
                                             <Link 
-                                                href={`/product/edit/${product.id}`}
+                                                href={`/products/edit/${product.id}`}
                                                 className="w-fit"
                                             >
                                                 <EditIcon/>
