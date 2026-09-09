@@ -12,12 +12,12 @@ import { deleteProduct } from "@/actions/ProductsAction";
 
 const Products = ({products}) => {
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false); 
-    const [selectedId, setSelectedId] = useState();
+    const [selectProduct, setSelectProduct] = useState();
 
     const handleDelete = async () => {
-        await deleteProduct(selectedId);
+        await deleteProduct(selectProduct);
         setIsDeleteModalOpen(false);
-        setSelectedId(null);
+        setSelectProduct(null);
     }
 
     return (
@@ -68,11 +68,11 @@ const Products = ({products}) => {
                                         </div>
                                     </td>
                                     <td>{product.productType.name || "-"}</td>
-                                    <td>{product.mpr || "0"}</td>
+                                    <td>{product.mrp || "0"}</td>
                                     <td>{product.sellPrice || "0"}</td>
                                     <td>{product.currentStock}</td>
                                     <td 
-                                        className={cn(product.isActive ? "text-green-500" : "text-red-500")}
+                                        className={cn(product.isActive===true ? "text-green-500" : "text-red-500")}
                                     >
                                         {product.isActive ? "Active" : "Inactive"}
                                     </td>
@@ -88,7 +88,7 @@ const Products = ({products}) => {
                                                 className="bg-transparent p-0 px-2 border-none text-red-500 shadow-none"
                                                 onClick={()=>{
                                                     setIsDeleteModalOpen(true);
-                                                    setSelectedId(product.id);
+                                                    setSelectProduct(product);
                                                 }}
                                             >
                                                 <DeleteIcon/>

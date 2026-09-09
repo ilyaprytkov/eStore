@@ -1,3 +1,6 @@
+"use client"
+
+import { updateProduct } from "@/actions/ProductsAction";
 import { View } from "@/features/view";
 import { Button } from "@/shared/ui/button";
 import CustomFileInput from "@/shared/ui/customFileInput";
@@ -15,6 +18,7 @@ const EditProduct = ({searchParams, productTypes, product}) => {
 
             <form 
                 className="grid gap-x-6 gap-y-10 mt-10 grid-cols-2 px-2"
+                action={(formData)=>updateProduct(product.id, formData, product.image)}
             >
                 {
                     <View.Condition if={errorMessage}>
@@ -85,7 +89,7 @@ const EditProduct = ({searchParams, productTypes, product}) => {
                 </div>
                 <div>
                     <Label required={true}>Product Status</Label>
-                    <Switch name="isActive" defaultValue={product.isActive ? "on" : null}/>
+                    <Switch name="isActive" defaultValue={product.isActive}/>
                 </div>
                 <div className="grid col-span-2 gap-2">
                     <Label required={true}>Description</Label>

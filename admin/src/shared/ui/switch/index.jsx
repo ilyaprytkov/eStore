@@ -12,7 +12,7 @@ const Switch = ({name, className, defaultValue}) => {
             />
             <div 
                 className="relative w-16 h-8 bg-gray-200 rounded-full after:content-['']
-                    after:absolute after:top-0.5 after:start-[4px] after:bg-white after:rounded-full
+                    after:absolute after:top-0.5 after:inset-s-1 after:bg-white after:rounded-full
                     after:h-7 after:w-7 after:transition-all peer peer-checked:after:translate-x-full
                     rtl:peer-checked:after:translate-x-full peer-checked:bg-blue-600"/>
         </label>

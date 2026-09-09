@@ -23,7 +23,7 @@ const CustomFileInput = ({name, required, defaultValue}) => {
             <Input 
                 type="file" 
                 name={name}
-                required={required}
+                required={defaultValue ? null : required}
                 className="sr-only"
                 id="fileInput"
                 onChange={handleFileChange}
