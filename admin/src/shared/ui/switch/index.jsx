@@ -1,13 +1,14 @@
 import { cn } from "@/shared/lib/utils";
 import { Input } from "../input";
 
-const Switch = ({name, className}) => {
+const Switch = ({name, className, defaultValue}) => {
     return (
         <label className={cn("inline-flex items-center cursor-pointer w-fit", className)}>
             <Input 
                 type="checkbox" 
                 name={name}
                 className="sr-only peer"
+                defaultChecked={defaultValue}
             />
             <div 
                 className="relative w-16 h-8 bg-gray-200 rounded-full after:content-['']

@@ -3,10 +3,18 @@ import { getProductTypes } from "@/actions/productTypesAction";
 import EditProduct from "@/components/screens/products/edit";
 import { use } from "react";
 
-const EditProductPage = () => {
+const EditProductPage = async ({searchParams, params}) => {
+
+    const productTypes = await getProductTypes();
+    const {productId} = await params;
+    const product = await getUniqueProduct(parseInt(productId));
 
     return (
-        <div>Edit Product Page</div>
+        <EditProduct
+            searchParams={searchParams}
+            productTypes={productTypes}
+            product={product}
+        />
     )
 }
 

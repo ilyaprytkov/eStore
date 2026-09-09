@@ -1,16 +1,22 @@
 "use client"
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { UploadIcon } from "../icons";
 import { Input } from "../input";
 
-const CustomFileInput = ({name, required}) => {
+const CustomFileInput = ({name, required, defaultValue}) => {
     const [fileName, setFileName] = useState("No file chosen");
 
     const handleFileChange = (event) => {
         const file = event.target.files[0];
         setFileName(file.name || "No file chosen.");
     }
+
+    useEffect(() => {
+        if(defaultValue) {
+            setFileName(defaultValue.split("/")[Array.length]);
+        }
+    }, [defaultValue]);
 
     return (
         <div className="grid grid-cols-[auto_1fr] gap-2 items-center">

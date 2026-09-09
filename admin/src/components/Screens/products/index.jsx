@@ -8,13 +8,14 @@ import { Button } from "@/shared/ui/button";
 import { View } from "@/features/view";
 import Image from "next/image";
 import { cn } from "@/shared/lib/utils";
+import { deleteProduct } from "@/actions/ProductsAction";
 
 const Products = ({products}) => {
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false); 
-    const [selectedProduct, setSelectedProduct] = useState();
+    const [selectedId, setSelectedId] = useState();
 
     const handleDelete = async () => {
-        await deleteUser(selectedId);
+        await deleteProduct(selectedId);
         setIsDeleteModalOpen(false);
         setSelectedId(null);
     }
@@ -87,7 +88,7 @@ const Products = ({products}) => {
                                                 className="bg-transparent p-0 px-2 border-none text-red-500 shadow-none"
                                                 onClick={()=>{
                                                     setIsDeleteModalOpen(true);
-                                                    setSelectedId(product);
+                                                    setSelectedId(product.id);
                                                 }}
                                             >
                                                 <DeleteIcon/>

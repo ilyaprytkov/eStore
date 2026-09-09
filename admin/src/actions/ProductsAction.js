@@ -22,6 +22,12 @@ export async function createProduct(formData) {
         isActive : formData.get("isActive"),
     };
 
+    for(const value of Object.values(data)) {
+        if(!value?.trim()) {
+            return redirect(`/products/add?errorMessage=Please fill all required fields.`);
+        }
+    }
+
     const productType = await prisma.productType.findUnique({
         where : {
             id: parseInt(data.productTypeId)
@@ -29,7 +35,7 @@ export async function createProduct(formData) {
     })
 
     if(!productType) {
-        return redirect(`/product/add?errorMessage=Product Type not found. Please try with different product type.`);
+        return redirect(`/products/add?errorMessage=Product Type not found. Please try with different product type.`);
     }
 
     const totalStock = parseInt(data.smallSize) + parseInt(data.mediumSize) + parseInt(data.largeSize);
@@ -97,4 +103,14 @@ export async function getUniqueProduct(productId) {
     })
 
     return product;
+}
+
+export async function deleteProduct(productId) {
+    await prisma.product.delete({
+        where: {
+            id : productId
+        }
+    });
+
+    revalidatePath("/products", "page");
 }

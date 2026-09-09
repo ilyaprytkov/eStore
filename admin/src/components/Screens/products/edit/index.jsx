@@ -1,10 +1,12 @@
 import { View } from "@/features/view";
 import { Button } from "@/shared/ui/button";
+import CustomFileInput from "@/shared/ui/customFileInput";
 import { Input } from "@/shared/ui/input";
 import Label from "@/shared/ui/label";
+import Switch from "@/shared/ui/switch";
 import { use } from "react";
 
-const EditProduct = ({searchParams}, productTypes, product) => {
+const EditProduct = ({searchParams, productTypes, product}) => {
     const {errorMessage} = use(searchParams);
 
     return (

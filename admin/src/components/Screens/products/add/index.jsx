@@ -21,7 +21,7 @@ const AddProducts = ({searchParams, productTypes}) => {
                 {
                     <View.Condition if={errorMessage}>
                         <div className="col-span-2 border-red-500 rounded-xl px-5 py-3 bg-red-50 w-fit">
-                            <span className="text-red-500 col-span-2 text-md my-0 font-500">{errorMessage }</span>
+                            <span className="text-red-500 col-span-2 text-md my-0 font-500">{errorMessage}</span>
                         </div>
                     </View.Condition>
                 }
